@@ -1,51 +1,11 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Prologue by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<?php include("templates/header.php"); ?>
+<br>
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+          <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+          <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+      </div>
 
-		<!-- Header -->
-			<?php include './routes/header.php'; ?>
-
-		<!-- Main -->
-
-			<div id="main">
-
-				<!-- Intro -->
-					<?php include './routes/intro.php'; ?>
-
-				<!-- Portfolio -->
-					<?php include './routes/portfolio.php'; ?>
-
-				<!-- Abaut -->
-					<?php include './routes/about.php'; ?>
-
-
-				<!-- Contact -->
-					<?php include './routes/contact.php'; ?>
-
-			</div>
-
-		<!-- Footer -->
-			<?php include './routes/footer.php'; ?>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+<?php include("templates/footer.php"); ?>
