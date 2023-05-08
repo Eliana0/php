@@ -1,21 +1,14 @@
 <?php 
 include("../../db.php");
 //DELETE
+$tabla_db= "tbl_puestos";
 if(isset($_GET['txtID'])){
     $txtID=(isset($_GET['txtID']))?$_GET['txtID']:"";
-    //si existe el dato se le asigna el valor, de lo contrario ""
-    $sentencia=$conexion->prepare("DELETE FROM tbl_puestos WHERE id=:id");
-    $sentencia->bindParam(":id", $txtID);
-    $sentencia->execute();
-    header("Location:index.php");
-    //envio de parámetros a travez de la url en el método GET
+    include("../../functions/delete.php");
 }
 //SELECT
-$sentencia= $conexion->prepare("SELECT * FROM `tbl_puestos`");
-$sentencia->execute();
-$lista_tbl_puestos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+include("../../functions/selectPuestos.php");
 ?>
-
 <?php include("../../templates/header.php"); ?>
 <br>
 
@@ -42,7 +35,6 @@ $lista_tbl_puestos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                            <td>
                            <a name="" id="" class="btn btn-primary" href="editar.php?txtID=<?php echo $registro['id'] ?>" role="button">Editar</a>
                            <a name="" id="" class="btn btn-primary" href="index.php?txtID=<?php echo $registro['id'] ?>" role="button">Eliminar</a>
-                                                                        <!-- manda datos a la url -->
                        </tr>
                     <?php } ?>
                 </tbody>

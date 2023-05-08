@@ -1,3 +1,24 @@
+<?php 
+include("../../db.php");
+$tabla_db="tbl_empleados";
+if(isset($_GET['txtID'])){
+    include("../../functions/get.php");
+    $name="foto";
+    include("../../functions/deleteFotoCV.php");
+    $name="cv";
+    include("../../functions/deleteFotoCV.php");
+
+    //DELETE
+    include("../../functions/delete.php");
+}
+
+$sentencia= $conexion->prepare("SELECT *,
+(SELECT idpuesto FROM tbl_puestos 
+WHERE tbl_puestos.id=tbl_empleados.idpuesto limit 1) as puesto 
+FROM $tabla_db");
+$sentencia->execute();
+$lista_tbl_empleados=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+?>
 <?php include("../../templates/header.php"); ?>
 <br>
 
@@ -11,6 +32,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Foto</th>
                         <th scope="col">CV</th>
@@ -20,16 +42,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($lista_tbl_empleados as $registro) { ?>
                     <tr class="">
-                        <td scope="row">Oscar Uh</td>
-                        <td>imágen.jpg</td>
-                        <td>CV.pdf</td>
-                        <td>Programador Sr</td>
-                        <td>12/12/2012</td>
-                        <td><a name="" id="" class="btn btn-primary" href="#" role="button">Carta</a>
-                        <a name="" id="" class="btn btn-primary" href="#" role="button">Editar</a>
-                        <a name="" id="" class="btn btn-primary" href="#" role="button">Eliminar</a></td>
+                        <td><?php echo $registro['id']; ?></td>
+                        <td><?php echo $registro['nombre']; ?> <?php echo $registro['apellido']; ?></td>
+                        <td scope="row"><img width="50" src="<?php echo $registro['foto']; ?>" alt=""></td>
+                        <td><a href="<?php echo $registro['cv']; ?>"><?php echo $registro['cv']; ?></a></td>
+                        <td><?php echo $registro['puesto']; ?></td>
+                        <td><?php echo $registro['fechadeingreso']; ?></td>
+                        <td><a name="" id="" class="btn btn-primary" href="editar.php?txtID=<?php echo $registro['id'] ?>" role="button">Editar</a>
+                            <a name="" id="" class="btn btn-primary" href="index.php?txtID=<?php echo $registro['id'] ?>" role="button">Eliminar</a>
+                        </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

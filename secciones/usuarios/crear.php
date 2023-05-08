@@ -1,3 +1,22 @@
+<?php 
+include("../../db.php");
+$tabla_db="tbl_usuarios";
+$values_db="id, usuario, correo, password";
+$values_update=":usuario, :email, :password";
+//POST
+if($_POST){
+    $usuario=(isset($_POST["usuario"]) ? $_POST["usuario"]:"");
+    $email=(isset($_POST["email"]) ? $_POST["email"]:"");
+    $password=(isset($_POST["password"]) ? $_POST["password"]:"");
+    include("../../functions/create.php");
+    $sentencia->bindParam(":usuario",$usuario);
+    $sentencia->bindParam(":email",$email);
+    $sentencia->bindParam(":password",$password);
+
+    $sentencia->execute();
+    header("Location:index.php");              
+}
+?>
 <?php include("../../templates/header.php"); ?>
 <br>
 <div class="card">
@@ -13,7 +32,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="password" class="form-label">Email</label>
+              <label for="email" class="form-label">Email</label>
               <input type="email"
                 class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Escriba su email">
             </div>
