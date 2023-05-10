@@ -1,6 +1,6 @@
 # Carga de empleados con PHP y SQL
 
-Este es un proyecto que hice el cuál simula una carga de registro de empleados utilizando una base de datos local. El proyecto cuenta con un inicio de sesióncon un inicio y un cierre de sesión. La capacidad de añadir puestos de empleados en la base de datos, borrarlos y editarlos; añadir nuevos empleados y sus datos, borrarlos y editarlos; y añadir nuevos usuarios autorizados para el uso de la página, borrarlos y actualizarlos.
+Este es un proyecto que hice el cuál simula una carga de registro de empleados utilizando una base de datos local. El proyecto cuenta con un  inicio y un cierre de sesión. La capacidad de añadir puestos de empleados en la base de datos, borrarlos y editarlos; añadir nuevos empleados y sus datos, borrarlos y editarlos; y añadir nuevos usuarios autorizados para el uso de la página, borrarlos y actualizarlos.
 
 ## Requisitos
 
@@ -13,7 +13,7 @@ Este es un proyecto que hice el cuál simula una carga de registro de empleados 
 
 1. Clona el repositorio: `git clone https://github.com/Eliana0/php`
 2. Navega al directorio del proyecto: `cd php`
-3. Instala las dependencias: `npm install`
+3. Instala: `npm install`
 
 ## Uso
 
