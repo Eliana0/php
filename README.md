@@ -23,36 +23,18 @@ Este es un proyecto que hice el cuál simula una carga de registro de empleados 
 
 ## Estructura de Archivos
 
-- /functions
-  - create.php
-  - createFotoCV.php
-  - delete.php
-  - deleteFotoCV.php
-  - editarFotoCV.php
-  - get.php
-  - getFotoCV.php
-  - selectPuestos.php
-  - update.php
+- /functions : En este apartado están todas las funciones que se pueden reutilizar para hacer los respectivos CRUD de cada objeto.
 - /secciones
- - /empleados
-    - crear.php
-    - editar.php
-    - index.php
- -/puestos
-    - crear.php
-    - editar.php
-    - index.php
- -/usuarios
-    - crear.php
-    - editar.php
-    - index.php
-- /templates
+ - /empleados : La sección CRUD de empleados, en ella podrás añadir, borrar, modificar y ver los perfiles de los empleados disponibles.
+ -/puestos : La sección CRUD de puestos, en ella podrás añadir, borrar, modificar y ver los puestos de los empleados y está relacionada a la creación de perfiles de empleados para seleccionar de esta lista.
+ -/usuarios : La sección CRUD de usuarios, en ella podrás añadir, borrar, modificar y ver los perfiles de las personas que tienen acceso a esta app.
+- /templates : Estructura de footer y header.
   -footer.php
   -header.php
-- cerrar.php
-- db.php
-- index.php
-- login.php
+- cerrar.php : Deslogueo del sitio.
+- db.php: Base de datos en MyAdmin.
+- index.php : Bienvenida al sitio.
+- login.php : Logueo de sitio, sólo podrá accceder el personal autorizado.
 
 ## Licencia
 
